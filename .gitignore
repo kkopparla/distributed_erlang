@@ -1,0 +1,7 @@
+ebin/*.beam
+*.beam
+erl_crash.dump
+*.dump
+.vscode/
+.idea/
+test_*.txt
