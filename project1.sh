@@ -54,7 +54,7 @@ if [[ "$1" =~ ^[0-9]+$ ]]; then
     echo " Listening on IP: $LOCAL_IP"
     echo " Connect workers via: ./project1.sh $LOCAL_IP"
     echo "============================================================"
-    exec erl -pa ebin -name "$NODE_NAME" -setcookie "$COOKIE" -noshell -run project1 main "$@"
+    exec erl -pa ebin -name "$NODE_NAME" -setcookie "$COOKIE" -kernel logger_level warning -noshell -run project1 main "$@"
 else
     # Worker mode
     RAND_ID=$((RANDOM % 9000 + 1000))
@@ -64,5 +64,5 @@ else
     echo " Connecting to Server: $1"
     echo " Silent mode: All found coins are printed on Server."
     echo "============================================================"
-    exec erl -pa ebin -name "$NODE_NAME" -setcookie "$COOKIE" -noshell -run project1 main "$1"
+    exec erl -pa ebin -name "$NODE_NAME" -setcookie "$COOKIE" -kernel logger_level warning -noshell -run project1 main "$1"
 fi

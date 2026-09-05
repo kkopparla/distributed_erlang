@@ -102,6 +102,7 @@ if ($isInteger) {
     erl -pa ebin `
         -name $NodeName `
         -setcookie $Cookie `
+        -kernel logger_level warning `
         -noshell `
         -run project1 main @runArgs
 } else {
@@ -117,6 +118,7 @@ if ($isInteger) {
     erl -pa ebin `
         -name $NodeName `
         -setcookie $Cookie `
+        -kernel logger_level warning `
         -noshell `
         -run project1 main $Arg1
 }
